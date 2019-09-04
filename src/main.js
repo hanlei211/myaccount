@@ -22,9 +22,9 @@ const i18n = new VueI18n({
 
 router.beforeEach((to,from,next)=>{
 let token = localStorage.getItem("userName");
-if(!token && to.path==!'/login'){
+if(!token && to.path!='/login'){
     next('/login');
-}else{
+}else{ 
     next();
 }
 })
