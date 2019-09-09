@@ -8,7 +8,7 @@
          class="el-icon-s-unfold"></i>
     </div>
     <div class="logo">记账管理系统</div>
-    <div class="header_right">
+    <div class="header-right">
       <div class="header-user-con">
         <div class="btn-message">
           <el-tooltip effect="dark"
@@ -17,7 +17,7 @@
         </div>
         <!--用户-->
         <div class="header-user-avator">
-          <img src="../../assets/logo.png" />
+          <img src="../../assets/avtor.jpg" />
         </div>
         <!--下拉菜单-->
         <el-dropdown class="user-name"
@@ -39,13 +39,13 @@ export default {
     return {
       collapse: false,
       message: 2,
-      userName: hl
+      userName: 'hl'
     };
   },
   methods: {
     handleCommand (command) {
       if (command = 'loginOut') {
-        localStorage.removeItem('ms_username');
+        localStorage.removeItem(userName);
         this.$router.path('/login');
       }
     },
@@ -57,4 +57,49 @@ export default {
 }
 </script>
 <style scoped>
+.header {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  font-size: 22px;
+  color: #fff;
+  background-color: rgb(64, 158, 255);
+}
+.collapse-btn {
+  float: left;
+  padding: 0 21px;
+  cursor: pointer;
+  line-height: 70px;
+}
+.header .logo {
+  float: left;
+  width: 250px;
+  line-height: 70px;
+}
+.header-right {
+  float: right;
+  padding-right: 50px;
+}
+.header-right .header-user-con {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+.user-name {
+  margin-left: 10px;
+}
+.header-user-con .header-user-avator img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.el-dropdown-link {
+  color: #fff;
+  cursor: pointer;
+}
+.el-dropdown-menu__item {
+  text-align: center;
+}
 </style>
